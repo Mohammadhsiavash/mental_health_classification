@@ -26,3 +26,54 @@ the sentiment analysis is on the body column of this dataset to classify them in
 fine-tuned ALBERT, BERT, RoBERTa, DistilBERT, and ELECTRA.
 
 
+# Explain Code and Procedure
+
+### Load the dataset from huging face
+'''
+dataset = load_dataset("solomonk/reddit_mental_health_posts")
+'''
+
+### Pre-processing
+
+'''
+def not_none(example):
+    return example['body'] is not None
+# At first we deleted none values in dataset
+dataset = dataset.filter(not_none)
+
+# Here we removed rows that are bigger than 500 char to make the training process faster
+def filter_text(example):
+  len_body = len(example['body'])
+  if len_body>=500:
+    return True
+  return False
+
+def compute_metrics(pred):
+    labels = pred.label_ids
+    preds = pred.predictions.argmax(-1)
+    f1 = f1_score(labels, preds, average="weighted")
+    acc = accuracy_score(labels, preds)
+    return {"accuracy": acc, "f1": f1}
+
+def prepare_dataframe(df):
+  # Concatenate title and body
+  df['body'] = df.body.fillna('')
+  df['body'] = df.body.str.cat(df.title, sep=' ')
+
+  # Removed deleted posts
+  df = df[~df.author.str.contains('
+')]
+  df = df[~df.body.str.contains('
+')]
+  df = df[~df.body.str.contains('
+')]
+  df = df[~df.body.str.contains('
+')]
+
+  # Removed moderador posts
+  df = df[df.author!='AutoModerator']
+
+  return df[['body', 'subreddit']]
+  '''
+
+  
