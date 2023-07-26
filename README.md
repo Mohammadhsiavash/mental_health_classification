@@ -5,6 +5,12 @@ However, we realized it was crucial to dig deeper into what makes the models rea
 Interestingly, we found that removing label references didn't really change the models' decisions based on text length or the number of characters. This means that the models focus more on the meaning of the text rather than its structure.
 Our research also showed that pretrained models can understand subtle details related to mental health conditions, which shows promise in using pre-trained models to find important patterns in mental health testimonies.
 By understanding these aspects better, we can develop AI systems that help accurately and fairly identify mental health concerns, supporting both mental health professionals and those who need care and help. This knowledge contributes to better understanding interpretable AI and mental health informatics, and is possible to define patterns on each condition.
+# Team Members
+Daniela Baño
+Mohammad Hasan Siavash
+Saloni Das
+Fredy Orozco
+Fernanda Zetter
 
 # 🚀 Quick Tour
 
