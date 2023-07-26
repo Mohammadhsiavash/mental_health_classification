@@ -7,9 +7,13 @@ Our research also showed that pretrained models can understand subtle details re
 By understanding these aspects better, we can develop AI systems that help accurately and fairly identify mental health concerns, supporting both mental health professionals and those who need care and help. This knowledge contributes to better understanding interpretable AI and mental health informatics, and is possible to define patterns on each condition.
 # Team Members
 Daniela Baño
+
 Mohammad Hasan Siavash
+
 Saloni Das
+
 Fredy Orozco
+
 Fernanda Zetter
 
 # 🚀 Quick Tour
