@@ -29,13 +29,13 @@ fine-tuned ALBERT, BERT, RoBERTa, DistilBERT, and ELECTRA.
 # Explain Code and Procedure
 
 ### Load the dataset from huging face
-'''
+```
 dataset = load_dataset("solomonk/reddit_mental_health_posts")
-'''
+```
 
 ### Pre-processing
 
-'''
+```
 def not_none(example):
     return example['body'] is not None
 # At first we deleted none values in dataset
@@ -74,6 +74,6 @@ def prepare_dataframe(df):
   df = df[df.author!='AutoModerator']
 
   return df[['body', 'subreddit']]
-  '''
+```
 
   
